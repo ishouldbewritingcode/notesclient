@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { NotesList } from '#/components/NotesList'
+import { Login } from '#/components/Login'
 
 export const Route = createFileRoute('/')({ component: Home })
 
@@ -11,6 +12,7 @@ function Home() {
         This is a simple notes app built with React and TanStack Router. You can
         create, edit, and delete notes.
       </p>
+      <Login />
       <NotesList />
     </div>
   )
