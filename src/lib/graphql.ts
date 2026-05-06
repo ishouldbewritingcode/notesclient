@@ -4,11 +4,13 @@ export async function graphqlRequest<T>(
   query: string,
   variables?: Record<string, unknown>,
 ) {
+  const token = sessionStorage.getItem('authToken')
+  const headers: Record<string, string> = { 'Content-Type': 'application/json' }
+  if (token) headers['Authorization'] = `Bearer ${token}`
+
   const response = await fetch(GRAPHQL_URL, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    headers,
     body: JSON.stringify({ query, variables }),
   })
 
