@@ -1,14 +1,16 @@
+import { Link } from '@tanstack/react-router'
+
 const Header: React.FC<{ handleLogout: () => void }> = ({ handleLogout }) => {
   return (
     <header className="flex p-4 gap-4 items-end">
       <h1 className="text-4xl font-bold m-0 mr-4">React TanStack Notes</h1>
       <nav className="ml-8 mr-auto justify-items-start flex gap-4 text-2xl items-end">
-        <a href="/" className="text-blue-500 hover:underline">
+        <Link to="/" className="text-blue-500 hover:underline">
           Home
-        </a>
-        <a href="/about" className="ml-4 text-blue-500 hover:underline">
+        </Link>
+        <Link to="/about" className="ml-4 text-blue-500 hover:underline">
           About
-        </a>
+        </Link>
       </nav>
       <div className="flex items-center justify-between">
         <button
